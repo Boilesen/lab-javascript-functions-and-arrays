@@ -20,17 +20,20 @@ const words = [
 var lngth = 0;
 var longst;
 
-function findLongestWord(words) {
-  words.forEach(function (words) {
-    if (words.length > lngth) {
-      lngth = words.length;
-      longst = words;
+function findLongestWord(arr) {
+  if (arr == "") {
+    return null;
+  }
+  arr.forEach(function (arr) {
+    if (arr.length > lngth) {
+      lngth = arr.length;
+      longst = arr;
     }
   });
   return longst;
 }
 
-var longest = findLongestWord(words);
+var longest = findLongestWord(arr);
 console.log(longest);
 
 // Iteration #3: Calculate the sum
@@ -103,6 +106,14 @@ const wordsUnique = [
   "bring",
 ];
 
+function uniquifyArray(wordsUnique) {
+  if (wordsUnique == "") {
+    return null;
+  }
+  var unique = wordsUnique.filter((v, i, a) => a.indexOf(v) === i);
+  return unique;
+}
+
 // Iteration #6: Find elements
 const wordsFind = [
   "machine",
@@ -114,7 +125,12 @@ const wordsFind = [
   "truth",
   "disobedience",
 ];
-
+function doesWordExist(wordsArr, wordSearch) {
+  if (wordsArr == "") {
+    return null;
+  }
+  return wordsArr.includes(wordSearch);
+}
 // Iteration #7: Count repetition
 const wordsCount = [
   "machine",
@@ -129,6 +145,13 @@ const wordsCount = [
   "disobedience",
   "matter",
 ];
+
+function howManyTimes(arr, palavras) {
+  if (arr == "") {
+    return 0;
+  }
+  return arr.filter((elm) => elm === palavras).length;
+}
 
 // Iteration #8: Bonus
 
