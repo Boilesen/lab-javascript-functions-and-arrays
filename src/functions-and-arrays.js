@@ -17,53 +17,46 @@ const words = [
   "orchard",
   "crackpot",
 ];
-var lngth = 0;
-var longst;
-
-function findLongestWord(arr) {
-  if (arr == "") {
+function findLongestWord(palavras) {
+  if (palavras.length == 0) {
     return null;
   }
-  arr.forEach(function (arr) {
-    if (arr.length > lngth) {
-      lngth = arr.length;
-      longst = arr;
+  let maiorPalavra = "";
+  for (let i = 0; i < palavras.length; i++) {
+    if (palavras[i].length > maiorPalavra.length) {
+      maiorPalavra = palavras[i];
     }
-  });
-  return longst;
+  }
+  return maiorPalavra;
 }
-
+console.log(findLongestWord(words));
 var longest = findLongestWord(arr);
 console.log(longest);
 
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-function sumNumbers(numbers) {
-  if (numbers == "") {
-    return 0;
+function sumNumbers(numeros) {
+  let total = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    total += numeros[i];
   }
-
-  if (numbers != null) {
-    const soma = numbers.reduce((acc, cv) => acc + cv);
-    return soma;
-  }
+  return total;
 }
-
+console.log(sumNumbers(numbers));
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-function averageNumbers(numbersAvg) {
-  if (numbersAvg == "") {
+function averageNumbers(numbers) {
+  if (numbers == "") {
     return null;
   }
-
-  if (numbersAvg != null) {
-    const media = numbersAvg.reduce((acc, cv) => acc + cv) / numbersAvg.length;
-    return media;
+  let total = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    total += numbers[i];
   }
+  return total / numbers.length;
 }
-
 // Level 2: Array of strings
 const wordsArr = [
   "seat",
